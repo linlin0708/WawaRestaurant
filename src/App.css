@@ -13,22 +13,25 @@
   .category-container {
     display: flex;
     overflow-x: auto;
-    gap: 8px;
+    gap: 0px;
     padding-bottom: 8px;
     white-space: nowrap;
   }
   
   .category-button {
+    font-size: 15px;
+    color: brown;
     flex: 0 0 auto;
-    padding: 8px 16px;
-    border-radius: 8px;
-    background: lightgray;
+    padding: 20px 50px;
+    border-radius: 5px;
+    border-color: aliceblue;
+    background: transparent;
     cursor: pointer;
   }
   
   .category-button.active {
-    background: blue;
-    color: white;
+    background: lightcyan;
+    color: burlywood;
   }
   
   .food-grid {

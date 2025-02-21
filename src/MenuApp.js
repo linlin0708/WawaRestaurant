@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import bannerImage from "./Picture/wawamenubanner.jpg";
 
-const API_URL = "https://apex.oracle.com/pls/apex/wia2001_dbs_sb/foodapi/food"; // Your API endpoint
+const API_URL = "https://apex.oracle.com/pls/apex/wia2001_dbs_sb/foodapi/food";
 
 export default function MenuApp() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [foodItems, setFoodItems] = useState([]); 
   const [selectedFood, setSelectedFood] = useState(null);
-  const [categories, setCategories] = useState(["All"]); // Default category list
+  const [categories, setCategories] = useState(["ALL"]); // Default category list
 
   // Fetch food data from API
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function MenuApp() {
           setFoodItems(data.items);
           
           // Extract unique category names from food data
-          const uniqueCategories = ["All", ...new Set(data.items.map(item => item.category_name))];
+          const uniqueCategories = ["ALL", ...new Set(data.items.map(item => item.category_name))];
           setCategories(uniqueCategories);
         } else {
           console.error("Invalid API response format:", data);
@@ -29,7 +29,7 @@ export default function MenuApp() {
   }, []);
 
   // Filter food items by category
-  const filteredFood = selectedCategory === "All"
+  const filteredFood = selectedCategory === "ALL"
     ? foodItems
     : foodItems.filter(item => item.category_name === selectedCategory);
 
@@ -42,7 +42,7 @@ export default function MenuApp() {
           <h2 className="food-title">{selectedFood.food_name}</h2>
           <p className="food-code">Code: {selectedFood.food_id}</p>
           <p className="food-description">{selectedFood.food_desp}</p>
-          <p className="food-category">Category: {selectedFood.category_name}</p>
+          {/* <p className="food-category">Category: {selectedFood.category_name}</p> */}
           <p className="food-price">Price: RM {selectedFood.price}</p>
         </div>
       ) : (
