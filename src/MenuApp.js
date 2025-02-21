@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import bannerImage from "./Picture/latestquizbg.jpg";
+import bannerImage from "./Picture/wawamenubanner.jpg";
 
 const API_URL = "https://apex.oracle.com/pls/apex/wia2001_dbs_sb/foodapi/food"; // Your API endpoint
 
